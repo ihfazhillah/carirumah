@@ -1,2 +1,3 @@
-# search-and-sendemail
-django application to make search and send the result into email
+# Carirumah
+
+Help peoples to find houses for buy and rent, notify them with new list
