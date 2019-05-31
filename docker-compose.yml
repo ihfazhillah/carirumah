@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  # redis:
+  #   image: bitnami/redis:latest
+  #   environment:
+  #     - REDIS_PASSWORD='coderjoglobootcamp'
+  # db:
+  #   image: postgres:10.1-alpine
+  #   volumes:
+  #     - ./postgres_data:/var/lib/postgresql/data/
+  # nginx:
+  #   image: nginx:latest
+  #   ports:
+  #     - "8000:8000"
+  #     - "5000:5000"
+  #   depends_on:
+  #     - djangoapp
+  #     - flaskapp
+  #   volumes:
+  #     - ./django_app/blog_bootcamp/static:/static
+  #     - ./django_app/blog_bootcamp/media:/media
+  #     - ./config/nginx:/etc/nginx/conf.d
+  web:
+    build: .
+    ports:
+        - 8000:8000
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+        - .:/app
+    environment:
+      - ALLOWED_HOSTS_PUSH=djangoapp
