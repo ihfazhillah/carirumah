@@ -30,6 +30,9 @@ def test_email_subscription_register():
     assert subscription_data.query == 'rumah oke'
     assert not subscription_data.is_active
 
+    # check template
+    assert b'We emailed you about subscription\'s activation' in response.content
+
 
 # TODO:
 # check template for subscription success
