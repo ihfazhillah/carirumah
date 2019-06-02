@@ -8,6 +8,7 @@ class Subscription(models.Model):
     email = models.EmailField()
     query = models.CharField(max_length=255)
     is_active = models.BooleanField(default=False)
+    token = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
