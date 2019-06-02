@@ -29,3 +29,8 @@ def test_email_subscription_register():
     assert subscription_data.email == 'test@oke.com'
     assert subscription_data.query == 'rumah oke'
     assert not subscription_data.is_active
+
+
+# TODO:
+# check template for subscription success
+# check template for subscription failed
