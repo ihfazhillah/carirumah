@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo docker-compose exec web python manage.py $@
+docker-compose exec web python manage.py $@
