@@ -1,8 +1,10 @@
 import hashlib
 from django.shortcuts import render
+from django.http import HttpResponseNotFound
 from django.views.decorators.http import require_POST
 from django.core import mail
-from .forms import SubscriptionForm
+from .forms import SubscriptionForm, SubscriptionActivationForm
+from .models import Subscription
 
 # Create your views here.
 
@@ -38,6 +40,33 @@ def register(request):
         'subscription/register-failed.html',
         {'errors': form.errors}
     )
+
+
+def activate(request):
+    form = SubscriptionActivationForm(request.GET, request.POST)
+    if form.is_valid():
+        subscription = Subscription.objects.filter(
+            token=form.cleaned_data.get('token'),
+            email=form.cleaned_data.get('email')
+        ).first()
+
+        if subscription:
+            subscription.is_active = True
+            subscription.save()
+
+            return render(
+                request,
+                'subscription/activate-done.html'
+            )
+        return HttpResponseNotFound('subscription not found')
+    return render(
+        request,
+        'subscription/activate-failed.html',
+        {'errors': form.errors}
+    )
+
+
+        
 
 
 
