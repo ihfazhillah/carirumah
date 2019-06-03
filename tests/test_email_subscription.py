@@ -34,6 +34,27 @@ def test_email_subscription_register():
     assert b'We emailed you about subscription\'s activation' in response.content
 
 
-# TODO:
-# check template for subscription success
-# check template for subscription failed
+@pytest.mark.django_db
+def test_email_subscription_activation():
+    """testing register subscription activation"""
+    #1. create dummy data
+    subscription = Subscription.objects.create(
+        email='test@oke.com',
+        query='rumah oke',
+        token='helloworld'
+    )
+
+    #2. activate through view
+    client = Client()
+    response = client.get('/subscription/activate?token=helloworld&email=test@oke.com')
+    assert response.status_code == 200
+    #3. check template
+    assert b'Subscription Activated' in response.content
+    #4. check database
+    subscription = Subscription.objects.filter(
+        token='helloworld', query='rumah oke', email='test@oke.com'
+    ).first()
+
+    assert subscription is not None
+    assert subscription.is_active
+
