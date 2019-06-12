@@ -45,20 +45,19 @@ def register(request):
 def activate(request):
     form = SubscriptionActivationForm(request.GET, request.POST)
     if form.is_valid():
-        subscription = Subscription.objects.filter(
+
+        subscription = get_object_or_404(
+            Subscription,
             token=form.cleaned_data.get('token'),
             email=form.cleaned_data.get('email')
-        ).first()
+        )
+        subscription.is_active = True
+        subscription.save()
 
-        if subscription:
-            subscription.is_active = True
-            subscription.save()
-
-            return render(
-                request,
-                'subscription/activate-done.html'
-            )
-        return HttpResponseNotFound('subscription not found')
+        return render(
+            request,
+            'subscription/activate-done.html'
+        )
     return render(
         request,
         'subscription/activate-failed.html',
