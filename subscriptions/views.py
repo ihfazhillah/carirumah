@@ -1,5 +1,5 @@
 import hashlib
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseNotFound
 from django.views.decorators.http import require_POST
 from django.core import mail
@@ -66,7 +66,12 @@ def activate(request):
     )
 
 
-        
+def deactivate(request, subscription_id):
+    subscription = get_object_or_404(Subscription, id=subscription_id)
+    subscription.is_active = False
+    subscription.save()
 
-
-
+    return render(
+        request,
+        'subscription/deactivate-done.html'
+    )
