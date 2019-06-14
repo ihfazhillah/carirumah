@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Lorahost hosting - Home</title>
+  <title>Cari Rumah - Notify for houses for sale or rent</title>
   <link rel="icon" href="{% static 'img/Fevicon.png' %}" type="image/png">
 
   <link rel="stylesheet" href="{% static 'vendors/bootstrap/bootstrap.min.css' %}">
@@ -22,13 +22,14 @@
     <div class="main_menu">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container box_1620">
-            <a class="navbar-brand logo_h" href="index.html"><img src="{% static 'img/logo.png' %}" alt=""></a>
+            <a class="navbar-brand logo_h" href="/">Carirumah.com</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
 
+          <!--
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav justify-content-end">
               <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
@@ -51,6 +52,7 @@
               <a class="button button-outline button-small" href="#">Login</a>
             </div>
           </div> 
+          -->
         </div>
       </nav>
     </div>
@@ -61,16 +63,30 @@
   <!--================ Banner Section start =================-->
   <section class="hero-banner text-center">
     <div class="container">
-      <p class="text-uppercase">Smart Company With perfect space</p>
-      <h1>Powerful web Hosting</h1>
-      <p class="hero-subtitle">Form male saying she'd so every fifth winged after spirit male land moving won't seasons fish In shall given fifth edition</p>
-      <a class="button button-outline" href="#">Get Started</a>
+      <p class="text-uppercase">Search and Notify</p>
+      <h1>Cari Rumah</h1>
+      <p class="hero-subtitle">
+        Cari rumah atau kontrakan, save result and get notification 
+        for the new added houses for sale or rent.
+      </p>
+          <form>
+            <div class="form-group">
+              <label for="staticDomainSearch" class="sr-only">Houses Search</label>
+              <input type="text" class="form-control" id="staticDomainSearch" placeholder="Enter Your house search query">
+            </div>
+          <button class="button button-rounded-0" >Search</button>
+          </form>
+
+      
     </div>
   </section>
   <!--================ Banner Section end =================-->
 
 
+
   <!--================ Domain Search section start =================-->
+
+  <!--
   <section class="bg-gray domain-search">
     <div class="container">
       <div class="row no-gutters">
@@ -108,10 +124,12 @@
       </div>
     </div>
   </section>
+  -->
   <!--================ Domain Search section end =================-->
 
 
   <!--================ Client logo section start =================-->
+  <!--
   <section class="section-margin">
     <div class="container">
       <div class="text-center">
@@ -136,10 +154,12 @@
       </div>
     </div>
   </section>
+  -->
   <!--================ Client logo section end =================-->
 
 
   <!--================ Feature section start =================-->
+  <!--
   <section class="section-margin">
     <div class="container">
       <div class="row">
@@ -202,10 +222,12 @@
       </div>
     </div>
   </section>
+  -->
   <!--================ Feature section end =================-->
 
 
   <!--================ Price Table section start =================-->
+  <!--
   <section class="section-padding priceTable-bg">
     <div class="container">
       <div class="section-intro-white pb-85px text-center">
@@ -283,10 +305,12 @@
       </div>
     </div>
   </section>
+  -->
   <!--================ Price Table section end =================-->
 
 
   <!--================ Service section start =================-->
+  <!--
   <section class="section-margin mb-5 pt-xl-235">
     <div class="container">
       <div class="section-intro pb-85px text-center">
@@ -357,10 +381,12 @@
       </div>
     </div>
   </section>
+  -->
   <!--================ Service section end =================-->
 
 
   <!--================ Subscribe section start =================-->
+  <!--
   <section class="bg-gray section-padding">
     <div class="container">
       <div class="section-intro pb-5 mb-xl-2 text-center">
@@ -378,10 +404,12 @@
       </form>
     </div>
   </section>
+  -->
   <!--================ Subscribe section end =================-->
 
 
   <!--================  Dedicated server section start =================-->
+  <!--
   <section class="section-margin">
     <div class="container">
       <div class="row align-items-center">
@@ -397,10 +425,12 @@
       </div>
     </div>
   </section>
+  -->
   <!--================  Dedicated server section end =================-->
 
 
   <!--================ Testimonial section start =================-->
+  <!--
   <section class="bg-gray section-padding">
     <div class="container">
       <div class="section-intro pb-85px text-center">
@@ -489,6 +519,7 @@
 
     </div>
   </section>
+  -->
   <!--================ Testimonial section end =================-->
 
 
@@ -496,19 +527,20 @@
   <footer class="footer-area section-gap">
 		<div class="container">
 			<div class="row">
-				<div class="col-xl-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
+				<div class="col-xl-6 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
 					<h4>About Us</h4>
-          <p>Heaven fruitful doesn't over lesser days appear creeping seasons so behold bearing days open</p>
-          <a class="navbar-brand logo_h d-none d-xl-block" href="index.html"><img src="{% static 'img/logo.png' %}" alt=""></a>
+          <p>We provide houses search for sale and rent from various sites, and make you get the notification from email when we got a new data from your query</p>
+          <!-- <a class="navbar-brand logo_h d-none d-xl-block" href="index.html"><img src="{% static 'img/logo.png' %}" alt=""></a> -->
 				</div>
-				<div class="col-xl-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
+				<div class="col-xl-6 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
 					<h4>Contact Info</h4>
 					<ul>
-						<li>Address: Your address goes here, your demo address.</li>
-						<li><a href="tel:+88044338899">Phone: +880 44338899</a></li>
-						<li><a href="mailto:info@colorlib.com">Email: info@colorlib.com</a></li>
+						<li>Address: Masjid Misykatul Atsar, Kradenan, Tingkir Lor Tingkir Salatiga</li>
+						<li><a href="tel:+6282332661775">Phone: +62823 32661775</a></li>
+						<li><a href="mailto:me@ihfazh.com">Email: me@ihfazh.com</a></li>
 					</ul>
 				</div>
+                <!--
 				<div class="col-xl-2 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
 					<h4>Important Link</h4>
 					<ul>
@@ -543,17 +575,19 @@
           </div>
           
 				</div>
+                -->
 			</div>
+
 			<div class="footer-bottom row align-items-center text-center text-lg-left">
 				<p class="footer-text m-0 col-lg-8 col-md-12"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-				<div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
-					<a href="#"><i class="ti-facebook"></i></a>
-					<a href="#"><i class="ti-twitter-alt"></i></a>
-					<a href="#"><i class="ti-dribbble"></i></a>
-					<a href="#"><i class="ti-linkedin"></i></a>
-				</div>
+				<!-- <div class="col-lg-4 col-md-12 text-center text-lg-right footer-social"> -->
+				<!-- 	<a href="#"><i class="ti-facebook"></i></a> -->
+				<!-- 	<a href="#"><i class="ti-twitter-alt"></i></a> -->
+				<!-- 	<a href="#"><i class="ti-dribbble"></i></a> -->
+				<!-- 	<a href="#"><i class="ti-linkedin"></i></a> -->
+				<!-- </div> -->
 			</div>
 		</div>
 	</footer>
