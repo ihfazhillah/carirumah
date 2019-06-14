@@ -1,14 +1,24 @@
 {% extends 'base.html' %}
 {% block hero %}
-    <h3>results for {{ query }}</h3>
-
-    <h5>Send this result into your email</h5>
+  <section class="hero-banner hero-banner-sm text-center">
+    <div class="container">
+      <h1>Search Result</h1>
+      <nav aria-label="breadcrumb" class="banner-breadcrumb">
+          Term: {{ query }}
+      </nav>
     <form action="{% url 'send_email' %}" method="post">
+        <div class="form-group">
+            <label for="email" class="sr-only">Enter your email</label>
+            <input id="email" class="form-control" type="text" name="email" placeholder="Enter your email to subscribe this term">
+        </div>
         {% csrf_token %}
-        <input id="search" type="text" name="email">
         <input type="hidden" name="query" value="{{ query }}">
-        <input type="submit" value="Submit">
+
+          <button class="button button-outline button-outline-1">Subscribe</button>
     </form>
+    </div>
+  </section>
+
 {% endblock %}
 
 
