@@ -22,23 +22,32 @@
 {% endblock %}
 
 
+
     {% block content %}
-    <table>
+<section class="section-margin">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+    <table class='table table-stripped'>
         <thead>
             <tr>
-                <th>image</th>
-                <th>title</th>
-                <th>price</th>
+                <th>Thumbnail</th>
+                <th>Title</th>
+                <th>Price</th>
             </tr>
         </thead>
         <tbody>
             {% for res in result %}
             <tr>
                 <td><img src="{{ res.image }}" alt=""></td>
-                <td><a href="{{ res.link}}">{{ res.title }}</a></td>
+                <td><a href="{{ res.link}}" target="_blank">{{ res.title|title }}</a></td>
                 <td>{{ res.price }}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
+            </div>
+        </div>
+    </div>
+</section>
     {% endblock %}
