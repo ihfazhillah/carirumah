@@ -57,6 +57,10 @@ button.button{
   border: 0;
 }
 
+button.button-outline-1{
+  border: 1px solid $white;
+}
+
 .button-contactForm{
   border-radius: 5px;
 }

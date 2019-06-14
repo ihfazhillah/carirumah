@@ -1879,6 +1879,9 @@ h3, .h3 {
 button.button {
   border: 0; }
 
+button.button-outline-1 {
+  border: 1px solid #fff; }
+
 .button-contactForm {
   border-radius: 5px; }
 
