@@ -13,6 +13,7 @@ def register(request):
     form = SubscriptionForm(request.POST)
 
     if form.is_valid():
+        # TODO: process subscription token in the form
         subscription = form.save(commit=False)
 
         # process token
@@ -45,7 +46,7 @@ def register(request):
 def activate(request):
     form = SubscriptionActivationForm(request.GET, request.POST)
     if form.is_valid():
-
+        # TODO: can we move it into form? Let see
         subscription = get_object_or_404(
             Subscription,
             token=form.cleaned_data.get('token'),
