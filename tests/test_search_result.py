@@ -21,6 +21,6 @@ def test_search_post_context(mocker):
 
     subscription_action = context.get('subscription_action')
 
-    assert subscription_action == '/subscriptions/register'
+    assert subscription_action == '/subscription/register'
     
 

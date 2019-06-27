@@ -6,13 +6,25 @@
       <nav aria-label="breadcrumb" class="banner-breadcrumb">
           Term: {{ query }}
       </nav>
-    <form action="{% url 'send_email' %}" method="post">
-        <div class="form-group">
-            <label for="email" class="sr-only">Enter your email</label>
-            <input id="email" class="form-control" type="text" name="email" placeholder="Enter your email to subscribe this term">
-        </div>
+      <form action="{{ subscription_action }}" method="post">
+          {% for field in form %}
+                  {% if field.name == 'query' %}
+                  {{ field.as_hidden }}
+              {% endif %}
+
+            <div class="form-group">
+                {{ field.errors }}
+                <label for="">{{ field.label }}</label>
+                {{ field }}
+            </div>
+          {% endfor %}
+
+        <!-- <div class="form-group"> -->
+        <!--     <label for="email" class="sr-only">Enter your email</label> -->
+        <!--     <input id="email" class="form-control" type="text" name="email" placeholder="Enter your email to subscribe this term"> -->
+        <!-- </div> -->
         {% csrf_token %}
-        <input type="hidden" name="query" value="{{ query }}">
+        <!-- <input type="hidden" name="query" value="{{ query }}"> -->
 
           <button class="button button-outline button-outline-1">Subscribe</button>
     </form>

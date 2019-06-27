@@ -17,13 +17,13 @@ def index(request):
 @require_POST
 def search(request):
     q = request.POST.get('query', 'nothing')
-    form = SubscriptionForm()
+    form = SubscriptionForm(initial={'query': q})
     result = scrape(q)
     context = {
         'query': q,
         'result': result,
         'form': form,
-        'subscription_action': '/subscriptions/register'
+        'subscription_action': '/subscription/register'
     }
     return render(request, 'search_result.html', context)
 
