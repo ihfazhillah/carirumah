@@ -4,6 +4,7 @@ from scraper.olx import scrape
 from django.core import mail
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
+from subscriptions.forms import SubscriptionForm
 
 
 # Create your views here.
@@ -16,10 +17,13 @@ def index(request):
 @require_POST
 def search(request):
     q = request.POST.get('query', 'nothing')
+    form = SubscriptionForm()
     result = scrape(q)
     context = {
         'query': q,
-        'result': result
+        'result': result,
+        'form': form,
+        'subscription_action': '/subscriptions/register'
     }
     return render(request, 'search_result.html', context)
 
